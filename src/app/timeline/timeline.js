@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 const events = [
   {
@@ -21,9 +21,31 @@ const events = [
   },
 ];
 function Events({ props }) {
+  const [rotation, setRotation] = useState(0);
+  const [width, setWidth] = useState(50);
+  const [height, setheight] = useState(600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 600) {
+        setRotation(90);
+        setWidth(50);
+        setheight(300);
+      } else {
+        setRotation(0);
+        setWidth(50);
+        setheight(600);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="flex mx-12 items-center self-stretch justify-center gap-8 border-spacing-16 border-dashed border-2 border-red-500 rounded-2xl">
-      <div className="flex justify-center items-center gap-4 self-stretch py-4 pl-14 flex-1">
+    <div className="flex flex-col sm:flex-row mx-6 sm:mx-12 items-center self-stretch justify-center gap-8 border-spacing-16 border-dashed border-2 border-red-500 rounded-2xl">
+      <div className="flex justify-center items-center gap-4 self-stretch py-4 px-1 sm:pl-14 flex-1">
         <Image
           src={props.eventimage}
           fill={false}
@@ -34,6 +56,11 @@ function Events({ props }) {
       </div>
       <div>
         <Image
+          style={{
+            transform: `rotate(${rotation}deg)`,
+            width: `${width}px`,
+            height: `${height}px`,
+          }}
           src={props.lineimage}
           fill={false}
           width={50}
@@ -42,7 +69,7 @@ function Events({ props }) {
         />
       </div>
       <div className="flex flex-col justify-center gap-4 self-stretch flex-1  py-8 px-12">
-        <p className=" text-5xl not-italic font-bold tracking-[0.064em] leading-[4rem]">
+        <p className=" sm:text-5xl not-italic font-bold tracking-[0.064em] leading-[4rem]">
           {props.eventhead1}
         </p>
         <p className="text-xl">{props.eventdetails}</p>
@@ -58,11 +85,11 @@ function Events({ props }) {
 const Timeline = () => {
   return (
     <main className="flex flex-col justify-self-center items-center gap-28">
-      <section className="flex flex-col justify-center content-center text-center gap-16 px-12 pt-12  w-6/12 ">
-        <p className="text-5xl leading-10 tracking-normal text-yellow-500 font-bold">
+      <section className="flex flex-col justify-center content-center sm:text-center gap-8 sm:gap-16 sm:px-12 pt-12 px-8 sm:w-6/12 ">
+        <p className="text-3xl sm:text-5xl leading-10 tracking-normal text-yellow-500 font-bold">
           Now viewing
         </p>
-        <p className="text-8xl font-bold leading-10 tracking-[.25em]">
+        <p className="text-6xl sm:text-8xl font-bold leading-10 tracking-[.25em]">
           Timeline
         </p>
         <p className="px-2 text-left text-xl">
