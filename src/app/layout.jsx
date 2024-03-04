@@ -9,9 +9,11 @@ const DM = DM_Sans({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={DM.className}>
+      <body
+        className={`flex flex-col gap-4 ${DM.className} justify-center items-center h-screen p-2`}
+      >
         <NextProgress />
-        < Header />
+        <Header />
         {children}
       </body>
     </html>
