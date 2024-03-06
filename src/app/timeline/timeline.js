@@ -54,13 +54,14 @@ function Events({ props }) {
           alt={"event img"}
         />
       </div>
-      <div>
+      <div
+        style={{
+          transform: `rotate(${rotation}deg)`,
+          height: "fit-content",
+        }}
+      >
         <Image
-          style={{
-            transform: `rotate(${rotation}deg)`,
-            width: `${width}px`,
-            height: `${height}px`,
-          }}
+          style={{ width: `${width}px`, height: `${height}px` }}
           src={props.lineimage}
           fill={false}
           width={50}
