@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`flex flex-col gap-4 ${DM.className} justify-center items-center h-screen p-2`}
+        className={`flex flex-col gap-4 ${DM.className} justify-start items-center h-screen p-2`}
       >
         <NextProgress />
         <Header />
