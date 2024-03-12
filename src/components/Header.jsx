@@ -54,7 +54,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link className=" hover:text-gray-100 px-1 py-3" href="#">
+            <Link className=" hover:text-gray-100 px-1 py-3" href="/timeline">
               About
             </Link>
           </li>
@@ -68,80 +68,6 @@ export default function Header() {
           </button>
         </Link>
       </nav>
-      {/* 
-        <div className="navbar-menu relative z-50 hidden">
-          <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-          <nav className="fixed top-0 left-0 flex flex-col w-3/5 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto rounded-r-xl">
-            <div className="flex items-center mb-8">
-              <Link className="mr-auto flex items-center justify-center leading-none" href="/">
-             	<Image height={20} width={20} src="" alt="logo" ></Image>
-			 	<span className=" capitalize">Google Developer Student clubs</span>
-              </Link>
-              <button className="navbar-close">
-                <svg
-                  className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-            <div>
-              <ul>
-                <li className="mb-1">
-                  <Link
-                    className="block p-4 hover:bg-black hover:text-white rounded-full"
-                    href="/"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <Link
-                    className="block p-4 hover:bg-black hover:text-white rounded-full"
-                    href="/"
-                  >
-                    Members
-                  </Link>
-                </li>
-                <li className="mb-1">
-                  <a
-                    className="block p-4 hover:bg-black hover:text-white rounded-full"
-                    href="/"
-                  >
-                    Blogs
-                  </a>
-                </li>
-                <li className="mb-1">
-                  <a
-                    className="block p-4 hover:bg-black hover:text-white rounded-full"
-                    href="/"
-                  >
-                    About
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-auto">
-              <div className="pt-6">
-                <a
-                  className="block px-4 py-4 mb-3 leading-loose text-xs text-center text-white bg-blue-600 hover:bg-blue-500 rounded-xl"
-                  href="#"
-                >
-                  Log In
-                </a>
-              </div>
-            </div>
-          </nav>
-        </div> */}
     </div>
   );
 }
