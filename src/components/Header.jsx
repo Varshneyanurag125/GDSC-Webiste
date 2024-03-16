@@ -40,22 +40,21 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              className=" hover:text-gray-100 px-1 py-3"
-              href="/members"
-              target="/blank"
-            >
+            <Link className=" hover:text-gray-100 px-1 py-3" href="/members">
               Members
             </Link>
           </li>
           <li>
-            <Link className=" hover:text-gray-100 px-1 py-3" href="#">
-              Blogs
+            <Link
+              className=" hover:text-gray-100 px-1 py-3"
+              href="/MemberDetail"
+            >
+              Member Detail
             </Link>
           </li>
           <li>
             <Link className=" hover:text-gray-100 px-1 py-3" href="/timeline">
-              About
+              Timeline
             </Link>
           </li>
         </ul>

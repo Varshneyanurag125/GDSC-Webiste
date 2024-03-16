@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 const events = [
@@ -24,7 +25,7 @@ function Events({ props }) {
   const [width, setWidth] = useState(50);
   const handleResize = () => {
     const screenWidth = window.innerWidth;
-    if (screenWidth <= 600) {
+    if (screenWidth <= 800) {
       setWidth(50);
     } else {
       setWidth(700);
@@ -38,7 +39,7 @@ function Events({ props }) {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row mx-6 sm:mx-12 items-center self-stretch justify-center gap-8 border-spacing-16 border-dashed border-2 border-red-500 rounded-2xl">
+    <div className="flex flex-col md:flex-row mx-6 sm:mx-12 items-center self-stretch justify-center gap-8 border-spacing-16 border-dashed border-2 border-red-500 rounded-2xl">
       <div className="flex justify-center lg:items-center gap-4 self-stretch py-4 px-1 sm:pl-14 flex-1">
         <Image
           src={props.eventimage}
@@ -50,7 +51,7 @@ function Events({ props }) {
       </div>
       <div
         style={{
-          display: width < 600 ? "none" : "block",
+          display: width < 768 ? "none" : "block",
         }}
       >
         <Image
