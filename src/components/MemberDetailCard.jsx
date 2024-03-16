@@ -2,16 +2,12 @@ const { default: Image } = require("next/image");
 const { default: MemberDetailDate } = require("./MemberDetailDate");
 
 const images = {
-  YouTube: import("../../public/youtube.svg"),
-  GitHub: import("../../public/github.svg"),
-  LinkedIn: import("../../public/linkedin.svg"),
-  vimeo: import("../../public/vimeo.svg"),
+  face: import("../../public/face.png"),
 };
 
 export default function MemberDetailCard({
   projectName = "Some project Name",
   description = "This is some very long description you need to use that you sho",
-  image = images.YouTube,
   color = "yellow-500",
   externalLinks = [
     {
@@ -35,9 +31,14 @@ export default function MemberDetailCard({
 }) {
   return (
     <div className="flex flex-row gap-4 w-full min-h-56 items-center ">
-      {/* tailwind for background red */}
-      <div className="w-56 h-56 h-full bg-red-500 shrink-0">
-        <Image src={image} alt="project image" height={56} width={56} />
+      <div className="w-72 h-56 h-full bg-red-500 shrink-0 relative rounded-tl-2xl overflow-hidden">
+        <Image
+          src={require("../../public/face.png")}
+          alt="project image"
+          // 100% width and height
+          layout="fill"
+          // make it round
+        />
       </div>
       <div className="flex flex-col justify-between w-full h-full">
         <div className="flex flex-col gap-2">
@@ -54,9 +55,9 @@ export default function MemberDetailCard({
                   >
                     <Image
                       className="object-cover"
-                      src={images[link.type]}
+                      src={require(`../../public/${link.type.toLowerCase()}.svg`)}
                       alt={link.type}
-                      height={116}
+                      height={16}
                       width={16}
                     />
                     <a

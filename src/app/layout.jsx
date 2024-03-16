@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
         className={`flex flex-col gap-4 ${DM.className} justify-start items-center h-screen p-2`}
       >
         <NextProgress />
+        <Header />
         {children}
       </body>
     </html>
