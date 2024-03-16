@@ -2,7 +2,7 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Timeline from "./timeline/timeline";
+import Timeline from "./timeline/page";
 import NextProgress from "nextjs-progressbar";
 
 const DM = DM_Sans({ subsets: ["latin"] });
@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
       <body
         className={`flex flex-col gap-4 ${DM.className} justify-start items-center h-screen p-2`}
       >
+        <Header />
         <NextProgress />
         {children}
       </body>

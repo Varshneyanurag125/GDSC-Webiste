@@ -209,7 +209,7 @@ function Card({
   return (
     <div className="flex flex-row gap-4 w-full min-h-56 items-center ">
       {/* tailwind for background red */}
-      <div className="w-56 h-56 h-full bg-red-500 shrink-0">
+      <div className="w-56 h-56 bg-red-500 shrink-0">
         <Image src={image} alt="project image" height={56} width={56} />
       </div>
       <div className="flex flex-col justify-between w-full h-full">
